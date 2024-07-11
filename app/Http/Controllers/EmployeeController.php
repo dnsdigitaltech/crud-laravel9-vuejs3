@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        
+        $employees = Employee::all();
+        return response()->json($employees);
+
     }
 
     /**
